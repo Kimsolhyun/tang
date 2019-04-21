@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>产品中心</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!--[if lt IE 9]>
+    <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        /*hover展示下拉菜单*/
+        /*.nav > li:hover .dropdown-menu {display: block;}*/
+        body{
+            padding-top: 50px;
+
+            background: white;;
+        }
+        .courseLogo{
+            width: auto;
+            height: 320px;;
+            transform-style:preserve-3d;;
+            perspective: 800px;
+            position: relative;
+            -webkit-perspective: 500px;
+            display: flex;
+            margin-top: 50px;
+            /*!*transform:translate3d( 0, 0, 0);*!字体迷糊*/
+            /*-webkit-transform:translate3d( 0, 0, 0);*/
+        }
+        .courseBefore{
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            transition: 1s;
+            box-shadow: rgba(50, 50, 50, 0.2) 0 0 1px;
+        }
+        .courseAfter{
+            width: 100%;
+            height: 100%;
+            transform: rotateY(-180deg);
+            backface-visibility: hidden;
+            transition: 1s;
+            box-shadow: rgba(50, 50, 50, 0.2) 0 0 1px;
+        }
+        .courseLogo:hover .courseBefore{
+            transform: rotateY(180deg);
+
+        }
+        .courseLogo:hover .courseAfter{
+            transform: rotateY(0deg);
+
+        }
+        .transform{
+            border: 1px solid  #E4E4E6;;
+            text-align: center;
+
+            /*已知块级元素的宽和高，块级元素水平垂直居中*/
+            position: absolute;top: 0;left: 0;bottom: 0; right: 0;
+            width: 246px;
+            height: 316px;
+            margin: auto;
+        }
+        .transform a:hover{
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .transformPic {
+            margin-top: -40px;
+        }
+        .containerTransform p{
+            padding: 10px 18px 10px 18px;
+            line-height: 2em;
+        }
+        /*.containerSlid{*/
+            /*margin-top: 20px;*/
+            /*height: 260px;*/
+            /*width: 100%;*/
+            /*background-image:url("img/banner.jpg");*/
+            /*background-repeat:no-repeat;*/
+        /*}*/
+        .carousel-caption{
+            margin-bottom: 60px;
+        }
+        .carousel-caption h1{
+            text-align: center;
+            font-size:3em;
+            color: white;
+            font-family:"微软雅黑 Light"
+
+            /*position:relative;*/
+            /*animation:mymove 0.7s;*/
+            /*animation-iteration-count:1;*/
+            /*animation-fill-mode:forwards;*/
+            /*!*!* Safari 和 Chrome *!兼容版本*!*/
+            /*-webkit-animation:mymove 1s;*/
+            /*-webkit-animation-iteration-count:1;*/
+            /*-webkit-animation-fill-mode:forwards;*/
+        }
+        /*@keyframes mymove*/
+        /*{*/
+            /*from {left:0px;}*/
+            /*to {left:390px;}*/
+        /*}*/
+
+        /*@-webkit-keyframes mymove !* Safari and Chrome *!*/
+        /*{*/
+            /*from {left:0px;}*/
+            /*to {left:390px;}*/
+        /*}*/
+        .containerTitle{
+            text-align: center;
+        }
+        .containerTitle h3{
+            color: #175890;
+        }
+        .containerTitle p{
+            color: #0D5ABD;
+        }
+        .tab{
+            margin-top: 40px;
+        }
+        .tab-pane{
+            font-family: "微软雅黑 Light";
+            line-height: 26px;
+            padding: 30px;
+        }
+        .text1{
+            padding-left: 50px;
+            padding-top: 60px;
+
+        }
+        .text1 h2{
+            color: #32A6CC;
+            padding-left: 20px;
+        }
+        .text1 p{
+            color: #32A6CC;
+            padding-left: 20px;
+        }
+        .miaoshu{
+            font-family:"微软雅黑";
+            font-size: medium;
+        }
+         .label{
+            font-size: 100%;
+            border-radius: 1.25em;
+        }
+         .text2{
+             padding-top: 80px;
+             padding-left: 120px;
+         }
+        .text2 h3{
+            padding-bottom: 20px;
+
+        }
+
+    </style>
+</head>
+<body onload="loads();">
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse " role="navigation">
+    <!--navbar-inverse 反色-->
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#demo-navbar" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="home.html"><img src="img/3xdatalogo.png"></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="demo-navbar">
+            <ul class="nav navbar-nav">
+                <li class=""><a href="home.html">首页<br>HOME<span class="sr-only">(current)</span></a></li>
+                <li class="dropdown active">
+                    <a href="procenter.html" onclick="clearSto()" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">产品中心<br>PRODUCT CENTER<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#tab-sjrh">数据融合系统</a></li>
+                        <li><a href="#tab-sjgl">数据管理系统</a></li>
+                        <li><a href="#tab-aqsj">安全审计系统</a></li>
+                        <li><a href="#tab-ywgl">运维管理系统</a></li>
+                        <li><a href="#tab-sjkf">数据开放系统</a></li>
+                        <li><a href="#tab-nrgl">内容管理系统</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="solution.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">解决方案<br>SOLUTION<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="solution-dzsw.html">电子政务</a></li>
+                        <li><a href="solution-ylhy.html">医疗行业</a></li>
+                        <li><a href="solution-hlwhy.html">互联网行业</a></li>
+                        <li><a href="solution-zhcs.html">智慧城市</a></li>
+                        <li><a href="solution-jrhy.html">金融行业</a></li>
+                        <li><a href="solution-xqhz.html">校企合作</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="news.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">新闻中心<br>NEWS<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="news.html" name="#tab-gsdt" onclick="setData(this)" >公司动态</a></li>
+                        <li><a href="news.html" name="#tab-hyxw" onclick="setData(this)">行业新闻</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" data-toggle="modal" data-target="#about">关于我们</a></li>
+                <!--<form class="navbar-form navbar-left">-->
+                <!--<div class="form-group">-->
+                <!--<input type="text" class="form-control" placeholder="用户名..">-->
+                <!--</div>-->
+                <!--<div class="form-group">-->
+                <!--<input type="text" class="form-control" placeholder="密码..">-->
+                <!--</div>-->
+                <!--<button type="submit" class="btn btn-default">登录</button>-->
+                <!--</form>-->
+            </ul>
+
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<!--banner-->
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <img src="img/banner.jpg" alt="...">
+            <div class="carousel-caption">
+                <h1>融合创新技术&nbsp;服务智慧中国</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="containerTitle">
+        <h3>产品中心</h3>
+        <img src="img/add.png">
+        <p>PRODUCT &nbsp;CENTER</p>
+    </div>
+</div>
+<!--旋转动画-->
+<div class="container containerTransform">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="courseLogo">
+                <div class="courseBefore transform">
+                    <div class="front">
+                        <img class="transformPic" src="img/fz11.png">
+                        <h3>数据融合系统</h3>
+                        <p>数据融合系统为大数据平台提供各类异构数据源的数据归集、整理、清洗和转换功能。
+                        </p>
+                    </div>
+                </div>
+                <div class="courseAfter transform">
+                    <div class="back">
+                        <img class="transformPic" src="img/fz1.png">
+                        <a href="">
+                            <h3 class="cenh32">数据融合系统</h3>
+                        </a>
+                        <p>数据融合系统为大数据平台提供各类异构数据源的数据归集、整理、清洗和转换功能。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="courseLogo">
+                <div class="courseBefore transform">
+                    <div class="front">
+                        <img class="transformPic" src="img/fz22.png">
+                        <h3>数据管理系统</h3>
+                        <p>数据管理系统是一个基于WEB控制台，能与大数据集群进行数据交互、数据分析、元数据管理、安全管理和数据检索的综合性平台。
+                        </p>
+                    </div>
+                </div>
+                <div class="courseAfter transform">
+                    <div class="back">
+                        <img class="transformPic" src="img/fz2.png">
+                        <a href="">
+                            <h3>数据管理系统</h3>
+                        </a>
+                        <p>数据管理系统是一个基于WEB控制台，能与大数据集群进行数据交互、数据分析、元数据管理、安全管理和数据检索的综合性平台。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="courseLogo">
+                <div class="courseBefore transform">
+                    <div class="front">
+                        <img class="transformPic" src="img/fz33.png">
+                        <h3>运维管理系统</h3>
+                        <p>运维管理系统是一个分布式、可扩展、易维护的管理平台，为大数据平台提供安全可靠的数据存储、资源管理、监控告警和运维保障。
+                        </p>
+                    </div>
+                </div>
+                <div class="courseAfter transform">
+                    <div class="back">
+                        <img class="transformPic" src="img/fz3.png">
+                        <a href="">
+                            <h3>运维管理系统</h3>
+                        </a>
+                        <p>运维管理系统是一个分布式、可扩展、易维护的管理平台，为大数据平台提供安全可靠的数据存储、资源管理、监控告警和运维保障。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="courseLogo">
+                <div class="courseBefore transform">
+                    <div class="front">
+                        <img class="transformPic" src="img/fz44.png">
+                        <h3>安全审计系统</h3>
+                        <p>安全审计系统为大数据集群提供集中式、细粒度化的安全策略管和日志审计功能，弥补了传统数据库审计产品无法支持对大数据产品进行审计的不足。
+                        </p>
+                    </div>
+                </div>
+                <div class="courseAfter transform">
+                    <div class="back">
+                        <img class="transformPic" src="img/fz4.png">
+                        <a href="">
+                            <h3 class="cenh32">安全审计系统</h3>
+                        </a>
+                        <p>安全审计系统为大数据集群提供集中式、细粒度化的安全策略管和日志审计功能，弥补了传统数据库审计产品无法支持对大数据产品进行审计的不足。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="courseLogo">
+                <div class="courseBefore transform">
+                    <div class="front">
+                        <img class="transformPic" src="img/fz55.png">
+                        <h3>数据开放平台</h3>
+                        <p>数据开放平台是数据汇聚、管理、共享和开放的统一窗口，以“开放是常态”的理念为基础，通过基于大数据技术的数据管理平台将汇集到的各类数据进行融合，形成相对较准确和标准的数据。
+                        </p>
+                    </div>
+                </div>
+                <div class="courseAfter transform">
+                    <div class="back">
+                        <img class="transformPic" src="img/fz5.png">
+                        <a href="">
+                            <h3>数据开放平台</h3>
+                        </a>
+                        <p>数据开放平台是数据汇聚、管理、共享和开放的统一窗口，以“开放是常态”的理念为基础，通过基于大数据技术的数据管理平台将汇集到的各类数据进行融合，形成相对较准确和标准的数据。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="courseLogo">
+                <div class="courseBefore transform">
+                    <div class="front">
+                        <img class="transformPic" src="img/fz66.png">
+                        <h3>内容管理系统</h3>
+                        <p>内容管理系统采用了网页模板设计，通过将信息内容与网站页面进行完全分离，采用灵活的标签语言，能够为用户轻松自如地呈现出丰富多彩的网站页面风格。
+                        </p>
+                    </div>
+                </div>
+                <div class="courseAfter transform">
+                    <div class="back">
+                        <img class="transformPic" src="img/fz6.png">
+                        <a href="">
+                            <h3>内容管理系统</h3>
+                        </a>
+                        <p>内容管理系统采用了网页模板设计，通过将信息内容与网站页面进行完全分离，采用灵活的标签语言，能够为用户轻松自如地呈现出丰富多彩的网站页面风格。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--标签页-->
+<div class="container tab">
+    <!--设置id--><!--设置id--><!--设置id--><!--设置id-->
+    <ul class="nav nav-tabs" role="tablist" id="tab-list">
+        <li role="presentation" class="active"><a href="#tab-sjrh"  role="tab" data-toggle="tab" aria-controls="home">数据融合系统</a></li>
+        <li role="presentation"><a href="#tab-sjgl" aria-controls="profile" role="tab" data-toggle="tab">数据管理系统</a></li>
+        <li role="presentation"><a href="#tab-aqsj" aria-controls="messages" role="tab" data-toggle="tab">安全审计系统</a></li>
+        <li role="presentation"><a href="#tab-ywgl" aria-controls="settings" role="tab" data-toggle="tab">运维管理系统</a></li>
+        <li role="presentation"><a href="#tab-sjkf" aria-controls="settings" role="tab" data-toggle="tab">数据开放系统</a></li>
+        <li role="presentation"><a href="#tab-nrgl" aria-controls="settings" role="tab" data-toggle="tab">内容管理系统</a></li>
+    </ul>
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <!--第一个标签-->
+        <div role="tabpanel" class="tab-pane active" id="tab-sjrh">
+            <!--第一行-->
+            <div class="row" >
+                <div class="col-md-6 text1">
+                    <h2>数据融合系统</h2>
+                    <p>DATA&nbsp; FUSION &nbsp;SYSTEM</p>
+                <span class="glyphicon glyphicon-star" aria-hidden="true">
+                    <span class="miaoshu" style="line-height: 25px">数据融合系统为大数据平台提供各类异构数据源的数据归集、整理、清洗和转换功能。</span>
+                </span>
+                    <br>
+                    <div style="padding: 19px">
+                        <span class="label label-info">数据归集</span>
+                        <span class="label label-info">数据整理</span>
+                        <span class="label label-info">数据清洗</span>
+                        <span class="label label-info"> 数据转换</span>
+                    </div>
+
+                </div>
+                <div class="col-md-6">
+                    <img src="img/sjrh1.png">
+                </div>
+            </div>
+            <!--第二行-->
+            <div class="row" >
+                <div class="col-md-6 text1">
+                    <h3 style="padding-left: 20px; ">数据融合系统设计意图</h3>
+                    <span class="glyphicon glyphicon-star" aria-hidden="true">
+                        <span class="miaoshu" style="line-height: 25px">管控ETL模型、节点、用户、数据和ETL引擎</span>
+                    </span>
+                    <span class="glyphicon glyphicon-star" aria-hidden="true">
+                        <span class="miaoshu" style="line-height: 25px">实现任务在节点上的实时分发</span>
+                    </span>
+                    <br>
+                    <span class="glyphicon glyphicon-star" aria-hidden="true">
+                    <span class="miaoshu" style="line-height: 25px">开发和运维实时对接</span>
+                    </span>
+                </div>
+                <div class="col-md-6">
+                    <img src="img/sjrh2.png">
+                </div>
+            </div>
+            <!--第三行-->
+            <div class="row">
+                <div class="col-md-6 ">
+                    <img src="img/sjrh3.png">
+                </div>
+                <div class="col-md-6 text2">
+                    <h3 style="padding-left: 20px; ">数据融合系统-用户视图</h3>
+                    <span class="glyphicon glyphicon-star" aria-hidden="true">
+                        <span class="miaoshu" style="line-height: 25px">用户视图基于B/S构建</span>
+                    </span>
+                    <span class="glyphicon glyphicon-star" aria-hidden="true">
+                        <span class="miaoshu" style="line-height: 25px">用户视图面向业务运营人员</span>
+                    </span>
+                    <br>
+                    <span class="glyphicon glyphicon-star" aria-hidden="true">
+                    <span class="miaoshu" style="line-height: 25px">整个流程的执行情况和数据的导入导出信息</span>
+                    </span>
+                </div>
+            </div>
+            <!--第四行-->
+            <div class="row">
+                <div class="col-md-6 text1">
+                    <h3 style="padding-left: 20px; ">数据融合系统-开发视图</h3>
+                    <span class="glyphicon glyphicon-star" aria-hidden="true">
+                        <span class="miaoshu" style="line-height: 25px">可视化集成大数据组件开发工具和丰富的组件库</span>
+                    </span>
+                    <span class="glyphicon glyphicon-star" aria-hidden="true">
+                        <span class="miaoshu" style="line-height: 25px">支持提取和融合现有的多元数据、可视化拖拽式开发设计器</span>
+                    </span>
+                    <br>
+                    <span class="glyphicon glyphicon-star" aria-hidden="true">
+                    <span class="miaoshu" style="line-height: 25px">支持各种发行版Hadoop、NoSQL和分析型数据库</span>
+                    </span>
+                </div>
+                <div class="col-md-6 ">
+                    <img src="img/sjrh4.png">
+                </div>
+            </div>
+        </div>
+        <!--第二个标签-->
+        <div role="tabpanel" class="tab-pane" id="tab-sjgl">
+            <!--第一行-->
+            <div class="row" >
+                <div class="col-md-6 text1">
+                    <h2>数据管理系统</h2>
+                    <p>BIG&nbsp; DATA &nbsp;MANAGEMENT &nbsp;SYSTEM</p>
+                <span class="glyphicon glyphicon-star" aria-hidden="true">
+                    <span class="miaoshu" style="line-height: 25px">数据管理系统是一个基于WEB控制台，能与大数据集群进行数据交互、数据分析、元数据管理、安全管理和数据检索的综合性平台。</span>
+                </span>
+                    <br>
+                    <div style="padding: 19px">
+                        <span class="label label-info">数据交互 </span>
+                        <span class="label label-info">数据分析 </span>
+                        <span class="label label-info">全文检索 </span>
+                        <span class="label label-info"> 元数据管理</span>
+                    </div>
+
+                </div>
+                <div class="col-md-6">
+                    <img src="img/sjgl1.png">
+                </div>
+            </div>
+            <!--第二行-->
+            <div class="row" >
+                <div class="col-md-6 text1">
+                    <h3 style="padding-left: 20px; ">数据管理系统特点</h3>
+                    <span class="glyphicon glyphicon-star" aria-hidden="true">
+                        <span class="miaoshu" style="line-height: 25px">支持多种开发语言和处理框架（如R、Python、Spark、SQL、Hive、Java、Impala、Scala等）</span>
+                    </span>
+                    <span class="glyphicon glyphicon-star" aria-hidden="true">
+                        <span class="miaoshu" style="line-height: 25px">基于B/S架构的交互式数据管理编辑器，提供丰富的多维度数据分析展现形式</span>
+                    </span>
+                    <br>
+                    <span class="glyphicon glyphicon-star" aria-hidden="true">
+                    <span class="miaoshu" style="line-height: 25px">丰富的元数据管理，支持RMDBS、Hbase、Hive等数据库或数据仓库的元数据管理</span>
+                    </span>
+                </div>
+                <div class="col-md-6">
+                    <img src="img/sjgl2.jpg">
+                </div>
+            </div>
+            <!--第三行-->
+            <div class="row">
+                <div class="col-md-6 ">
+                    <img src="img/sjgl3.png">
+                </div>
+                <div class="col-md-6 text2">
+                    <h3 style="padding-left: 20px; ">大数据管理系统功能</h3>
+                    <span class="glyphicon glyphicon-star" aria-hidden="true">
+                        <span class="miaoshu" style="line-height: 25px">集成HDFS:支持浏览文件系统，对文件进行操作、上传数据、新建文件夹等。</span>
+                    </span>
+                    <span class="glyphicon glyphicon-star" aria-hidden="true">
+                        <span class="miaoshu" style="line-height: 25px">集成HIVE：提供Hive的集成界面，用于各种HQL语句的解析和执行，具有语法高亮和自动填充的功能，并可保存相关结果。</span>
+                    </span>
+                    <br>
+                    <span class="glyphicon glyphicon-star" aria-hidden="true">
+                    <span class="miaoshu" style="line-height: 25px">集成工作流：以拖拽的方式提供工作逻辑。</span>
+                    </span>
+                    <span class="glyphicon glyphicon-star" aria-hidden="true">
+                    <span class="miaoshu" style="line-height: 25px">集成任务管理：提供任务列表，分类和搜索，以及运行详情。</span>
+                    </span>
+                    <span class="glyphicon glyphicon-star" aria-hidden="true">
+                    <span class="miaoshu" style="line-height: 25px">元数据管理：查看表结构、字段和对表进行相关操作。</span>
+                    </span>
+                    <span class="glyphicon glyphicon-star" aria-hidden="true">
+                    <span class="miaoshu" style="line-height: 25px">服务协调管理：查看集群的服务协调管理信息。</span>
+                    </span>
+                </div>
+            </div>
+            <!--第四行-->
+            <div class="row">
+                <div class="col-md-6 text1">
+                    <h3 style="padding-left: 20px; ">大数据管理个性化</h3>
+                    <span class="glyphicon glyphicon-star" aria-hidden="true">
+                        <span class="miaoshu" style="line-height: 25px">个人主页：提供个人个性化页面，作为个人工作台管理自己相关项目并分类管理，可以自己保存常用查询脚本和相关文档。</span>
+                    </span>
+                    <span class="glyphicon glyphicon-star" aria-hidden="true">
+                        <span class="miaoshu" style="line-height: 25px">知识库：知识库提供对函数的收集和共享</span>
+                    </span>
+                    <br>
+                    <span class="glyphicon glyphicon-star" aria-hidden="true">
+                    <span class="miaoshu" style="line-height: 25px">文件安全：可以定义文件的用户权限和访问列表</span>
+                    </span>
+                    <span class="glyphicon glyphicon-star" aria-hidden="true">
+                    <span class="miaoshu" style="line-height: 25px">搜索：决定采用基于Solr进行全文检索，实现HDFS上数据搜索的目标</span>
+                    </span>
+                </div>
+                <div class="col-md-6 ">
+                    <img src="img/sjrh4.png">
+                </div>
+            </div>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="tab-aqsj">
+            <!--第一行-->
+            <div class="row" >
+                <div class="col-md-6 text1">
+                    <h2>安全审计系统</h2>
+                    <p>BIG&nbsp; DATA &nbsp;SECURITY &nbsp;AUDIT &nbsp; SYSTEM</p>
+                <span class="glyphicon glyphicon-star" aria-hidden="true">
+                    <span class="miaoshu" style="line-height: 25px">安全审计系统为大数据集群提供集中式、细粒度化的安全策略管和日志审计功能，弥补了传统数据库审计产品无法支持对大数据产品进行审计的不足。</span>
+                </span>
+                    <br>
+                    <div style="padding: 19px">
+                        <span class="label label-info">多维度日志审计 </span>
+                        <span class="label label-info">细粒度策略规则 </span>
+                        <span class="label label-info">集中式安全管控 </span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <img src="img/aqsj1.png">
+                </div>
+            </div>
+            <!--第二行-->
+            <div class="row" >
+                <div class="col-md-6 text1">
+                    <h3 style="padding-left: 20px; ">统一安全管理</h3>
+                    <span class="glyphicon glyphicon-star" aria-hidden="true">
+                        <span class="miaoshu" style="line-height: 25px">集中式管理安全策略</span>
+                    </span>
+                    <span class="glyphicon glyphicon-star" aria-hidden="true">
+                        <span class="miaoshu" style="line-height: 25px">为大数据安全提供统一的管理平台</span>
+                    </span>
+                    <br>
+                    <span class="glyphicon glyphicon-star" aria-hidden="true">
+                    <span class="miaoshu" style="line-height: 25px">安全策略统一地分发到大数据平台各个服务</span>
+                    </span>
+                </div>
+                <div class="col-md-6">
+                    <img src="img/aqsj2.png">
+                </div>
+            </div>
+            <!--第三行-->
+            <div class="row">
+                <div class="col-md-6 ">
+                    <img src="img/aqsj3.png">
+                </div>
+                <div class="col-md-6 text2">
+                    <h3 style="padding-left: 20px; ">审计管理</h3>
+                    <span class="glyphicon glyphicon-star" aria-hidden="true">
+                        <span class="miaoshu" style="line-height: 25px">通过系统插件对资源的访问情况，生成详细的审计日志</span>
+                    </span>
+                    <span class="glyphicon glyphicon-star" aria-hidden="true">
+                        <span class="miaoshu" style="line-height: 25px">审计日志存储多元化---支持Solr,HDFS，RDBMS ......</span>
+                    </span>
+                    <br>
+                    <span class="glyphicon glyphicon-star" aria-hidden="true">
+                    <span class="miaoshu" style="line-height: 25px">交互式日志审计视图</span>
+                    </span>
+                </div>
+            </div>
+            <!--第四行-->
+            <div class="row">
+                <div class="col-md-6 text1">
+                    <h3 style="padding-left: 20px; ">权限控制</h3>
+                    <span class="glyphicon glyphicon-star" aria-hidden="true">
+                        <span class="miaoshu" style="line-height: 25px">权限控制_HDFS策略</span>
+                    </span>
+                    <span class="glyphicon glyphicon-star" aria-hidden="true">
+                        <span class="miaoshu" style="line-height: 25px">权限控制_HIVE策略</span>
+                    </span>
+                    <br>
+                    <span class="glyphicon glyphicon-star" aria-hidden="true">
+                    <span class="miaoshu" style="line-height: 25px">权限控制_YARN策略</span>
+                    </span>
+                </div>
+                <div class="col-md-6 ">
+                    <img src="img/aqsj4.png">
+                </div>
+            </div>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="tab-ywgl">
+            <!--第一行-->
+            <div class="row" >
+                <div class="col-md-6 text1">
+                    <h2>运维管理系统</h2>
+                    <p>BIG&nbsp; DATA &nbsp;OPERATIONS &nbsp;MANAGEMENT &nbsp; SYSTEM</p>
+                <span class="glyphicon glyphicon-star" aria-hidden="true">
+                    <span class="miaoshu" style="line-height: 25px">运维管理系统是一个分布式、可扩展、易维护的管理平台，为大数据平台提供安全可靠的数据存储、资源管理、监控告警和运维保障。</span>
+                </span>
+                    <br>
+                    <div style="padding: 19px">
+                        <span class="label label-info">分布式集群化 </span>
+                        <span class="label label-info">全面的监控告警 </span>
+                        <span class="label label-info">集群资源管控</span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <img src="img/ywgl1.png">
+                </div>
+            </div>
+            <!--第二行-->
+            <div class="row" >
+                <div class="col-md-6 text1">
+                    <h3 style="padding-left: 20px; ">运维管理系统特性</h3>
+                    <span class="glyphicon glyphicon-star" aria-hidden="true">
+                        <span class="miaoshu" style="line-height: 25px">提供自定义服务，对服务进行细粒度的操作（启停、机架感知、维护模式等）</span>
+                    </span>
+                    <span class="glyphicon glyphicon-star" aria-hidden="true">
+                        <span class="miaoshu" style="line-height: 25px">根据指标类库, 提供多元化的指标监控收集和可视化展现。</span>
+                    </span>
+                    <br>
+                    <span class="glyphicon glyphicon-star" aria-hidden="true">
+                    <span class="miaoshu" style="line-height: 25px">组件服务一键向导式的集群安装和配置</span>
+                    </span>
+                    <span class="glyphicon glyphicon-star" aria-hidden="true">
+                    <span class="miaoshu" style="line-height: 25px">支持基础硬件设施资产管理</span>
+                    </span>
+                    <span class="glyphicon glyphicon-star" aria-hidden="true">
+                    <span class="miaoshu" style="line-height: 25px">提供基于RESTFUL API的工具集成</span>
+                    </span>
+                </div>
+                <div class="col-md-6">
+                    <img src="img/ywgl2.png">
+                </div>
+            </div>
+            <!--第三行-->
+            <div class="row">
+                <div class="col-md-6 ">
+                    <img src="img/ywgl3.png">
+                </div>
+                <div class="col-md-6 text2">
+                    <h3 style="padding-left: 20px; ">运维管理系统功能一</h3>
+                    <span class="glyphicon glyphicon-star" aria-hidden="true">
+                        <span class="miaoshu" style="line-height: 25px">集群监控：集群监控为集群、节点、组件提供了监控预警功能，可以通过修改监控预警规则的阀值来自定义监控预警规则。</span>
+                    </span>
+                    <span class="glyphicon glyphicon-star" aria-hidden="true">
+                        <span class="miaoshu" style="line-height: 25px">组件管理：为集群提供集中式的服务组件统一管理功能，平台管理员可以根据业务需求快速添加大数据服务组件到平台上，扩展平台功能。</span>
+                    </span>
+                    <br>
+                    <span class="glyphicon glyphicon-star" aria-hidden="true">
+                    <span class="miaoshu" style="line-height: 25px">集群管理：提供了一站式、集中化、可视化的参数配置服务，包括：集群参数配置、节点参数配置和组件参数配置。</span>
+                    </span>
+                </div>
+            </div>
+            <!--第四行-->
+            <div class="row">
+                <div class="col-md-6 text1">
+                    <h3 style="padding-left: 20px; ">运维管理系统功能二</h3>
+                    <span class="glyphicon glyphicon-star" aria-hidden="true">
+                        <span class="miaoshu" style="line-height: 25px">资产管理：支持集群基础设施资产管理，实时掌握集群服务器硬件添加、更换、维护和配置情况，强化对集群基础设施的管控。</span>
+                    </span>
+                    <span class="glyphicon glyphicon-star" aria-hidden="true">
+                        <span class="miaoshu" style="line-height: 25px">资源管理：基于多租户的资源管理，为每个租户分配独立的存储空间和计算资源，实现资源独立管理和使用。</span>
+                    </span>
+                </div>
+                <div class="col-md-6 ">
+                    <img src="img/ywgl4.png">
+                </div>
+            </div>
+        </div>
+        <div role="tabpanel" class="tab-pane active" id="tab-sjkf">
+            <!--第一行-->
+            <div class="row" >
+                <div class="col-md-6 text1">
+                    <h2>数据开放平台</h2>
+                    <p>BIG&nbsp; DATA &nbsp;SHARING &nbsp;PLATFORM</p>
+                <span class="glyphicon glyphicon-star" aria-hidden="true">
+                    <span class="miaoshu" style="line-height: 25px">数据开放平台是数据汇聚、管理、共享和开放的统一窗口，以“开放是常态”的理念为基础，通过基于大数据技术的数据管理平台将汇集到的各类数据进行融合，形成相对较准确和标准的数据。</span>
+                </span>
+                    <br>
+                    <div style="padding: 19px">
+                        <span class="label label-info">免授权 </span>
+                        <span class="label label-info">数据及时 </span>
+                        <span class="label label-info"> 可获取</span>
+                        <span class="label label-info"> 可机读</span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <img src="img/sjkf1.png">
+                </div>
+            </div>
+            <!--第二行-->
+            <div class="row" >
+                <div class="col-md-6 text1">
+                    <h3 style="padding-left: 20px; ">数据主题</h3>
+                    <span class="glyphicon glyphicon-star" aria-hidden="true">
+                        <span class="miaoshu" style="line-height: 25px">根据不同数据分类和数据属性，建立了数据主题，如城市建设、道路交通、公共安全、机构团体、教育科技、经济建设、民生服务、社会发展、卫生健康、文化休闲、信用服务、资源环境等。这不仅提高了数据管理的能力，而且方便了公众查询数据的效率。</span>
+                    </span>
+                </div>
+                <div class="col-md-6">
+                    <img src="img/sjkf2.png">
+                </div>
+            </div>
+            <!--第三行-->
+            <div class="row">
+                <div class="col-md-6 ">
+                    <img src="img/sjkf3.png">
+                </div>
+                <div class="col-md-6 text2">
+                    <h3 style="padding-left: 20px; ">数据服务</h3>
+                    <span class="glyphicon glyphicon-star" aria-hidden="true">
+                        <span class="miaoshu" style="line-height: 25px">数据开放平台向第三方开放应用接入的功能，不仅丰富开放平台的服务形式，更让数据发挥其应有的价值。平台允许数据分析人员、专业数据公司以及数据主管部门利用数据开放平台中开放的数据进行移动应用和第三方数据服务的开发。</span>
+                    </span>
+                </div>
+            </div>
+            <!--第四行-->
+            <div class="row">
+                <div class="col-md-6 text1">
+                    <h3 style="padding-left: 20px; ">数据API</h3>
+                    <span class="glyphicon glyphicon-star" aria-hidden="true">
+                        <span class="miaoshu" style="line-height: 25px">除了提供标准的开放文件格式下载外，数据开放平台还提供安全可控的数据API服务，便于第三方业务系统和数据应用开发者直接获取和调用。数据API服务为数据开放平台提供了多样化的数据开放形式，也提高了平台的安全性、易用性和可扩展性。</span>
+                    </span>
+                </div>
+                <div class="col-md-6 ">
+                    <img src="img/sjkf4.png">
+                </div>
+            </div>
+        </div>
+        <div role="tabpanel" class="tab-pane active" id="tab-nrgl">
+            <!--第一行-->
+            <div class="row" >
+                <div class="col-md-6 text1">
+                    <h2>内容管理系统</h2>
+                    <p>CONTENT&nbsp; MANAGEMENT &nbsp;SYSTEM</p>
+                <span class="glyphicon glyphicon-star" aria-hidden="true">
+                    <span class="miaoshu" style="line-height: 25px">我们的产品包括了信息录入、栏目分类、工作流审核、信息发布、网站发布、权限控制和站群管理等全业务过程，具备完善的信息管理和发布管理功能。</span>
+                </span>
+                    <br>
+                    <div style="padding: 19px">
+                        <span class="label label-info">扁平化 </span>
+                        <span class="label label-info">数据自动同步 </span>
+                        <span class="label label-info"> 信息发布</span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <img src="img/nrgl1.png">
+                </div>
+            </div>
+            <!--第二行-->
+            <div class="row" >
+                <div class="col-md-6 text1">
+                    <h3 style="padding-left: 20px; ">内容管理系统产品特点</h3>
+                    <span class="glyphicon glyphicon-star" aria-hidden="true">
+                        <span class="miaoshu" style="line-height: 25px">支持跨平台稳定运行</span>
+                    </span><br>
+                    <span class="glyphicon glyphicon-star" aria-hidden="true">
+                        <span class="miaoshu" style="line-height: 25px">灵活的第三方数据接口管理</span>
+                    </span><br>
+                    <span class="glyphicon glyphicon-star" aria-hidden="true">
+                        <span class="miaoshu" style="line-height: 25px">支持数据自动同步功能</span>
+                    </span><br>
+                    <span class="glyphicon glyphicon-star" aria-hidden="true">
+                        <span class="miaoshu" style="line-height: 25px">支持统一身份认证管理</span>
+                    </span><br>
+                    <span class="glyphicon glyphicon-star" aria-hidden="true">
+                        <span class="miaoshu" style="line-height: 25px">完善的站群管理功能</span>
+                    </span><br>
+                    <span class="glyphicon glyphicon-star" aria-hidden="true">
+                        <span class="miaoshu" style="line-height: 25px">高效的页面模版自定义功能</span>
+                    </span><br>
+                    <span class="glyphicon glyphicon-star" aria-hidden="true">
+                        <span class="miaoshu" style="line-height: 25px">支持广告版本管理功能</span>
+                    </span><br>
+                    <span class="glyphicon glyphicon-star" aria-hidden="true">
+                        <span class="miaoshu" style="line-height: 25px">支持用户权限管理功能</span>
+                    </span>
+                </div>
+                <div class="col-md-6">
+                    <img src="img/nrgl2.png">
+                </div>
+            </div>
+            <!--第三行-->
+            <div class="row">
+                <div class="col-md-6 ">
+                    <img src="img/nrgl3.png">
+                </div>
+                <div class="col-md-6 text2">
+                    <h3 style="padding-left: 20px;">灵活的第三方数据接口管理</h3>
+                    <span class="glyphicon glyphicon-star" aria-hidden="true">
+                        <span class="miaoshu" style="line-height: 25px">支持灵活的、可定制的第三方数据接口管理功能，可随意的添加 多个接口参数和值，支持接口获取数据的get和post操作，返回结果 的数据类型支持JSON、文本和HTML格式。</span>
+                    </span>
+                </div>
+            </div>
+            <!--第四行-->
+            <div class="row">
+                <div class="col-md-6 text1">
+                    <h3 style="padding-left: 20px; ">高效的页面模板自定义功能</h3>
+                    <span class="glyphicon glyphicon-star" aria-hidden="true">
+                        <span class="miaoshu" style="line-height: 25px">系统提供了页面模版自定义功能，支持可视化模版制作，能快速 适应各种需求变化，轻松建设大规模网站群。</span>
+                    </span>
+                </div>
+                <div class="col-md-6 ">
+                    <img src="img/nrgl4.png">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid" id="foot">
+    <div class="row">
+        <div class="col-md-12">
+            <p><a href="#top" class="pull-right"><font style="color: white">回到顶部↑</font></a></p>
+            <p>地址 : 江西省南昌市火炬五路梦想街区阿里菜鸟众创空间210室<br>
+                电话 : 0791-86220075     邮箱 : sales@3xdata.cn<br>
+                © 2015-2018 江西三叉数信息科技有限公司 版权所有 丨 赣ICP备16005077号</p>
+
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="about" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">关于我们</h4>
+            </div>
+            <div class="modal-body">
+                <article>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;江西三叉数信息科技有限公司成立于2015年，是一家专业从事信息技术应用与服务的IT公司，致力于成为国内顶尖的信息技术服务提供商。
+                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;公司成立于2015年，始终坚持创新与应用相结合，专注打造数据采集、数据综合管理、数据资产化、数据挖掘分析、数据共享开放等数据类产品。提供精细化、专业化的数据运营服务，致力于成为具有核心竞争力的本地化数据服务提供商。秉承工匠精神，用全方位的数据服务、服务于您的每一条数据！
+                    <p style="text-align: right">——融合创新技术 服务智慧中国&hellip;
+                </article>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">了解了</button>
+                <!--<button type="button" class="btn btn-primary">Save changes</button>-->
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+<script>
+//    设置页面跳转传值标签联动
+    function setData(obj){
+        var id=$(obj).attr("name");
+        window.localStorage.setItem("id",id);
+    }
+
+    function  clearSto(){
+        localStorage.clear();
+        $("#tab-list a:first").tab("show");
+    }
+
+    function loads(){
+        var id=window.localStorage.getItem("id");
+//        alert(id);
+        $("#tab-list a[href='" + id +"']").tab("show");
+    }
+
+    //    标签页和导航栏联动
+    $(document).ready(function(){
+        $("#demo-navbar .dropdown-menu a").click(function(){
+            var href =$(this).attr("href");
+//            alert(href);
+            $("#tab-list a[href='" + href +"']").tab("show");
+        });
+    });
+
+    //关闭click.bs.dropdown.data-api事件，使顶级菜单可点击
+    $(document).off('click.bs.dropdown.data-api');
+    //自动展开
+    $('.nav .dropdown').mouseenter(function(){
+        $(this).addClass('open');
+    });
+    //自动关闭
+    $('.nav .dropdown').mouseleave(function(){
+        $(this).removeClass('open');
+    });
+</script>
+
+</body>
+</html>

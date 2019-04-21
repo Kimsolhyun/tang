@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>3x官方网站</title>
+    <!--<link href=" //netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="" href="fonts/glyphicons-halflings-regular.ttf">
+
+    <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <style href="stylesheet">
+        /*.center-block {*/
+            /*display: block;*/
+            /*margin-left: auto;*/
+            /*margin-right: auto;*/
+        /*}*/
+        body{
+            padding-top: 50px;
+            padding-bottom: 50px;
+            background: #F5F5F5;
+        }
+
+        .carousel {
+            height: 414px;
+            /*background-color: black;*/
+        }
+        .carousel .item {
+            height:  414px;
+            /*background-color: black;*/
+        }
+        .carousel .item img {
+            min-height:  414px;
+            width: 100%;
+        }
+
+        .carousel-caption p{
+            padding: 20px 60px;
+            font-size: 1.5em;
+
+        }
+        .carousel-caption h2 {
+            font-weight: 100;
+            margin-bottom: 30px;
+            font: 3em 微软雅黑;
+        }
+
+
+        .container-intruduce{
+            padding-top: 40px;
+            padding-bottom: 30px;
+        }
+        .container-intruduce h2 {
+            padding: 5px;
+            text-align: center;
+            color: #18598D;
+
+        }
+        .container-intruduce h3 {
+            padding: 5px;
+            text-align: center;
+            color: #18598D;
+
+        }
+        .container-intruduce h5 {
+            padding: 5px;
+            text-align: center;
+            color: #012060;
+        }
+        .container-intruduce .pic {
+            width: 100%;
+            text-align:center;
+            display:inline-block;
+        }
+        .container-intruduce .pic {
+            padding: 10px;
+        }
+
+
+
+        .carousel-caption {
+            bottom: 100px;
+        }
+
+
+        .container-act{
+            padding-top:40px;
+        }
+        .pull-right:hover{
+            text-decoration: none;
+        }
+        #intruduce2{
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+
+        .container-intruduce3 h3{
+            padding: 20px;
+            text-align: center;
+            font-weight: 100;
+            color: #434343;
+        }
+        .container-intruduce3 h1{
+            padding-bottom: 20px;
+            text-align: center;
+            color: #0285BB;
+            font-weight: 100;
+            font-family: "微软雅黑 Light";
+        }
+        .center-block {
+            display: block;
+            margin:0 auto;
+            width: 15%;
+        }
+        #yzfa{
+            height: 540px;
+            background-image: url("img/bg.jpg");
+            background-repeat:no-repeat;
+            background-size:100% 100%;
+            -moz-background-size:100% 100%;
+        }
+        .container-fluid .container-intruduce3{
+            padding-top: 160px;
+
+        }
+
+        .fourimg{
+            width: 100px;
+            height:100px;
+            margin: 150px auto 0;
+        }
+        .fourimg img{
+            transition: all 1s ease 0s;
+        }
+        /* transition 别放hover里，放到img里，这样移入移出一样缓慢，不然只对hover移上去有缓慢效果 */
+        .fourimg img:hover{
+            transform: scale(1.1);
+            /*transition: all 2s ease-in-out 0s;*/
+        }
+        /*.fourimg a{*/
+            /*transition: all 1s ease 0s;*/
+        /*}*/
+        /*.fourimg a:hover{*/
+            /*display: block;*/
+        /*}*/
+        #f1{
+            padding-left: 50px;
+        }
+        #f2{
+            padding-left: 10px;
+        }
+        #f3{
+            padding-left: 50px;
+        }
+        #f4{
+            padding-left: 30px;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse " role="navigation">
+    <!--navbar-inverse 反色-->
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="home.html"><img src="img/3xdatalogo.png"></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="home.html">首页<br>HOME<span class="sr-only">(current)</span></a></li>
+                <li class="dropdown">
+                    <a href="procenter.html" name="#tab-sjrh" onclick="setData(this)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">产品中心<br>PRODUCT CENTER<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="procenter.html#tab-sjrh" name="#tab-sjrh" onclick="setData(this)">数据融合系统</a></li>
+                        <li><a href="procenter.html#tab-sjgl" name="#tab-sjgl" onclick="setData(this)">数据管理系统</a></li>
+                        <li><a href="procenter.html#tab-aqsj" name="#tab-aqsj" onclick="setData(this)">安全审计系统</a></li>
+                        <li><a href="procenter.html#tab-ywgl" name="#tab-ywgl" onclick="setData(this)">运维管理系统</a></li>
+                        <li><a href="procenter.html#tab-sjkf" name="#tab-sjkf" onclick="setData(this)">数据开放系统</a></li>
+                        <li><a href="procenter.html#tab-nrgl" name="#tab-nrgl" onclick="setData(this)">内容管理系统</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="solution.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">解决方案<br>SOLUTION<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="solution-dzsw.html">电子政务</a></li>
+                        <li><a href="solution-ylhy.html">医疗行业</a></li>
+                        <li><a href="solution-hlwhy.html">互联网行业</a></li>
+                        <li><a href="solution-zhcs.html">智慧城市</a></li>
+                        <li><a href="solution-jrhy.html">金融行业</a></li>
+                        <li><a href="solution-xqhz.html">校企合作</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="news.html" name="#tab-gsdt" onclick="setData(this)"  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">新闻中心<br>NEWS<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="news.html" name="#tab-gsdt" onclick="setData(this)">公司动态</a></li>
+                        <li><a href="news.html" name="#tab-hyxw" onclick="setData(this)">行业新闻</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" data-toggle="modal" data-target="#about">关于我们</a></li>
+                <!--<form class="navbar-form navbar-left">-->
+                    <!--<div class="form-group">-->
+                        <!--<input type="text" class="form-control" placeholder="用户名..">-->
+                    <!--</div>-->
+                    <!--<div class="form-group">-->
+                        <!--<input type="text" class="form-control" placeholder="密码..">-->
+                    <!--</div>-->
+                    <!--<button type="submit" class="btn btn-default">登录</button>-->
+                <!--</form>-->
+            </ul>
+
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="4000">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <img src="img/banner1.png" alt="">
+            <div class="carousel-caption ">
+                <h2 class="banner-h2">大数据系统引爆数据价值</h2>
+                <p class="btn3">灵&nbsp;活&nbsp;.&nbsp;高&nbsp;效&nbsp;.&nbsp;安&nbsp;全&nbsp;.&nbsp;易&nbsp;用</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="img/banner2.jpg" alt="">
+            <div class="carousel-caption ">
+                <h2 class="banner-h2">大数据系统引爆数据价值</h2>
+                <p class="btn3">灵&nbsp;活&nbsp;.&nbsp;高&nbsp;效&nbsp;.&nbsp;安&nbsp;全&nbsp;.&nbsp;易&nbsp;用</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="img/banner3.jpg" alt="">
+            <div class="carousel-caption ">
+                <h2 class="banner-h2">大数据系统引爆数据价值</h2>
+                <p class="btn3">灵&nbsp;活&nbsp;.&nbsp;高&nbsp;效&nbsp;.&nbsp;安&nbsp;全&nbsp;.&nbsp;易&nbsp;用</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Controls -->
+    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">上一页</span>
+    </a>
+    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">下一页</span>
+    </a>
+</div>
+<!--领先安全-->
+<div class="container container-intruduce">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <h3>领先、安全、稳定的数据产品</h3>
+            <span class="pic"><img src="img/add.png"></span>
+            <h5 >DATA&nbsp;PRODUCT</h5>
+        </div>
+    </div>
+</div>
+<!--四个css动画-->
+<div class="container container-act">
+    <!-- Team members structure start -->
+    <div class="team-members row">
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-xs-6" style="text-align: center">
+                    <div class="single-member effect-1">
+                        <div class="member-image">
+                            <img src="img/icon1.png" alt="Member">
+                        </div>
+                        <div class="member-info">
+                            <!--<h3>Sophia</h3>-->
+                            <br>
+                            <h5>数据归集</h5>
+                            <h5>数据整理</h5>
+                            <h5>数据清洗</h5>
+                            <h5>数据转换</h5>
+                            <!--<p>数据融合系统为大数据平台提供各类异构数据源的数据归集、整理、清洗和转换功能。</p>-->
+                            <div class="social-touch">
+                                <a class="fb-touch" href="procenter.html"><font style="color: white">查看详情</font></a>
+                                <!--<a class="tweet-touch" href="#">看</a>-->
+                                <!--<a class="linkedin-touch" href="#"></a>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6" style="margin-top: 20px;text-align: center">
+                    <div class="single-member effect-1">
+                        <div class="member-image">
+                            <img src="img/icon2.png" alt="Member">
+                        </div>
+                        <div class="member-info">
+                            <!--<h3>Sophia</h3>-->
+                            <br>
+                            <h5>数据交互</h5>
+                            <h5>数据分析</h5>
+                            <h5>全文检索</h5>
+                            <h5>元数据管理</h5>
+                            <div class="social-touch">
+                                <a class="fb-touch" href="procenter.html"><font style="color: white">查看详情</font></a>
+                                <!--<a class="tweet-touch" href="#">看</a>-->
+                                <!--<a class="linkedin-touch" href="#"></a>-->
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-xs-6" style="margin-bottom: 20px;text-align: center">
+                    <div class="single-member effect-1">
+                        <div class="member-image">
+                            <img src="img/icon3.png" alt="Member">
+                        </div>
+                        <div class="member-info">
+                            <!--<h3>Sophia</h3>-->
+                            <br>
+                            <h5>分布式群化</h5>
+                            <h5>全面监控告警</h5>
+                            <h5>集群资源管控</h5>
+                            <div class="social-touch">
+                                <a class="fb-touch" href="procenter.html"><font style="color: white">查看详情</font></a>
+                                <!--<a class="tweet-touch" href="#">看</a>-->
+                                <!--<a class="linkedin-touch" href="#"></a>-->
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6" style="margin-top: 20px;text-align: center">
+                    <div class="single-member effect-1">
+                        <div class="member-image">
+                            <img src="img/icon4.png" alt="Member">
+                        </div>
+                        <div class="member-info">
+                            <!--<h3>Sophia</h3>-->
+                            <br>
+                            <h5>免授权</h5>
+                            <h5>数据及时</h5>
+                            <h5>可获取</h5>
+                            <h5>可机读</h5>
+                            <div class="social-touch">
+                                <a class="fb-touch" href="procenter.html"><font style="color: white">查看详情</font></a>
+                                <!--<a class="tweet-touch" href="#">看</a>-->
+                                <!--<a class="linkedin-touch" href="#"></a>-->
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- effect-1 html -->
+    </div>
+</div>
+<!--优质方案-->
+<div class="container-fluid container-intruduce">
+    <div class="row"  id="intruduce2">
+        <div class="col-md-6 col-md-offset-3">
+            <h3>优质的数据解决方案</h3>
+            <span class="pic"><img src="img/add.png"></span>
+            <h5 >DATA&nbsp;SOLUTIONS</h5>
+        </div>
+    </div>
+</div>
+<!--大数据解决方案-->
+<div class="container-fluid" id="yzfa">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-sm-6 col-md-6">
+                        <div class="fourimg" id="f1" onmouseover="open1(this)" onmouseout="miss(this)">
+                            <a href="" style="cursor: pointer" title="智慧城市"><img src="img/cs.jpg"></a>
+                            <!--<span id="span1" style="display: none;">智慧城市</span>-->
+                        </div>
+                        <div class="fourimg" id="f2" onmouseover="open1(this)" onmouseout="miss(this)">
+                            <a href="" style="cursor: pointer" title="电子政务"><img src="img/dz.jpg"></a>
+                            <!--<span id="span2" style="display: none;">电子政务</span>-->
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-6">
+                        <div class="fourimg" id="f3" onmouseover="open1(this)" onmouseout="miss(this)">
+                            <a href="" style="cursor: pointer" title="金融行业"><img src="img/jr.jpg"></a>
+                            <!--<span id="span3" style="display: none;">金融行业</span>-->
+                            <div class="fourimg" id="f4" onmouseover="open1(this)" onmouseout="miss(this)">
+                                <a href="" style="cursor: pointer" title="互联网行业"><img src="img/hl.jpg"></a>
+                                <!--<span id="span4" style="display: none;">互联网行业</span>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 container-intruduce3">
+                <h3>大数据时代，我们为您提供整体的</h3>
+                <h1>大数据解决方案</h1>
+                <a href="solution.html"  class=" btn btn-default bte-lg center-block">MORE</a>
+            </div>
+        </div>
+</div>
+<!--共同打造大数据?-->
+<div class="container-fluid container-intruduce" >
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <h3>共同打造数据生态系统</h3>
+            <span class="pic"><img src="img/add.png"></span>
+            <h5 >OUR&nbsp;PARTNERS</h5>
+        </div>
+    </div>
+</div>
+<div class="container-fluid" style="padding-bottom: 20px">
+    <div class="row">
+        <div class="col-md-3">
+            <a href="http://www.daydao.com"><img src="img/hezuo1.png"></a>
+        </div>
+        <div class="col-md-3">
+            <a href="http://www.e3cloud.com"><img src="img/hezuo2.png"></a>
+        </div>
+        <div class="col-md-3">
+            <a href="http://www.cs2c.com.cn"><img src="img/hezuo4.png"></a>
+        </div>
+        <div class="col-md-3">
+            <a href="http://www.shentongdata.com"><img src="img/hezuo5.png"></a>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid" id="foot">
+    <div class="row">
+        <div class="col-md-12">
+            <p><a href="#top" class="pull-right"><font style="color: white">回到顶部↑</font></a></p>
+            <p>地址 : 江西省南昌市火炬五路梦想街区阿里菜鸟众创空间210室<br>
+
+                电话 : 0791-86220075     邮箱 : sales@3xdata.cn<br>
+
+                © 2015-2018 江西三叉数信息科技有限公司 版权所有 丨 赣ICP备16005077号</p>
+
+        </div>
+    </div>
+</div>
+<!--模态框设置id即可 a链接设置 data-toogel="modal" data-target="#id"-->
+<div class="modal fade" id="about" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">关于我们</h4>
+            </div>
+            <div class="modal-body">
+                <article>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;江西三叉数信息科技有限公司成立于2015年，是一家专业从事信息技术应用与服务的IT公司，致力于成为国内顶尖的信息技术服务提供商。
+                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;公司成立于2015年，始终坚持创新与应用相结合，专注打造数据采集、数据综合管理、数据资产化、数据挖掘分析、数据共享开放等数据类产品。提供精细化、专业化的数据运营服务，致力于成为具有核心竞争力的本地化数据服务提供商。秉承工匠精神，用全方位的数据服务、服务于您的每一条数据！
+                    <p style="text-align: right">——融合创新技术 服务智慧中国&hellip;
+                </article>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">了解了</button>
+                <!--<button type="button" class="btn btn-primary">Save changes</button>-->
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!--<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>-->
+<!--<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>-->
+<script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+<script>
+    function setData(obj) {
+        var id = $(obj).attr("name");
+        window.localStorage.setItem("id", id);
+    }
+    //关闭click.bs.dropdown.data-api事件，使顶级菜单可点击
+    $(document).off('click.bs.dropdown.data-api');
+    //自动展开
+    $('.nav .dropdown').mouseenter(function(){
+        $(this).addClass('open');
+    });
+    //自动关闭
+    $('.nav .dropdown').mouseleave(function(){
+        $(this).removeClass('open');
+    });
+//    function open1(ob)
+//    {
+//        var id=$(ob).attr("id");
+//        if(id="f1"){
+//            document.getElementById("span1").style="display:block";
+//        }else {
+//            alert(id);
+//            if(id="f2"){
+//                document.getElementById("span2").style="display:block";
+//            }else{
+//                if(id="f3"){
+//                    document.getElementById("span3").style="display:block";
+//                }else {
+//                    document.getElementById("span4").style="display:block";
+//
+//                }
+//            }
+//        }
+//    }
+//    function miss(ob){
+//        var id=$(ob).attr("id");
+//        if(id="f1"){
+//            document.getElementById("span1").style="display:none";
+//        }else {
+//            if(id="f2"){
+//                document.getElementById("span2").style="display:none";
+//            }else{
+//                if(id="f3"){
+//                    document.getElementById("span3").style="display:none";
+//                }else {
+//                    document.getElementById("span4").style="display:none";
+//                }
+//            }
+//        }
+//    }
+//    function display() {
+//        f1= document.getElementById("f1");
+//        document.getElementById("span1").style="display:block";
+//        f2= document.getElementById("f2");
+//        document.getElementById("span2").style="display:block";
+//        f3= document.getElementById("f3");
+//        document.getElementById("span3").style="display:block";
+//        f4= document.getElementById("f4");
+//        document.getElementById("span4").style="display:block";
+//    }
+//    function  miss(){
+//        f1=document.getElementById("f1");
+//        document.getElementById("span1").style="display:none";
+//        f2=document.getElementById("f2");
+//        document.getElementById("span2").style="display:none";
+//        f3=document.getElementById("f3");
+//        document.getElementById("span3").style="display:none";
+//        f4=document.getElementById("f4");
+//        document.getElementById("span4").style="display:none";
+//    }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+

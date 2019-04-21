@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>3XDATA智慧城市
+        大数据解决方案</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <!--[if lt IE 9]>
+    <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        body{
+            padding-top: 50px;
+            padding-bottom: 50px;
+            background: #F5F5F5;
+        }
+        .carousel-caption{
+            padding-right: 300px;
+            margin-right: 136px;
+            padding-bottom: 40px;
+        }
+        .carousel-caption h1{
+            width: 500px;;
+            font-size:3.4em;
+            font-family: "微软雅黑 light ";
+            text-align: left;
+            padding-bottom: 20px;
+        }
+        .carousel-caption h4{
+            font-family: "微软雅黑 ";
+            font-size:1.5em;
+        }
+        .carousel-caption h2{
+            font-family: "微软雅黑 ";
+        }
+        .container-fluid  .row{
+            height: 400px;
+
+        }
+        .container-fluid h3{
+            color: #32A6CC;
+            margin-top: 70px;
+        }
+        .container-fluid h4{
+            color: #32A6CC;
+
+        }
+        .container-fluid h5{
+
+            line-height: 25px;
+            color: #333333;
+            font-family: "微软雅黑 ";
+            font-size: medium;
+            font-weight:500;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse " role="navigation">
+    <!--navbar-inverse 反色-->
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#demo-navbar" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="home.html"><img src="img/3xdatalogo.png"></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="demo-navbar">
+            <ul class="nav navbar-nav">
+                <li class=""><a href="home.html">首页<br>HOME<span class="sr-only">(current)</span></a></li>
+                <li class="dropdown ">
+                    <a href="procenter.html" name="#tab-sjrh" onclick="setData(this)" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">产品中心<br>PRODUCT CENTER<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="procenter.html#tab-sjrh" name="#tab-sjrh" onclick="setData(this)">数据融合系统</a></li>
+                        <li><a href="procenter.html#tab-sjgl" name="#tab-sjgl" onclick="setData(this)">数据管理系统</a></li>
+                        <li><a href="procenter.html#tab-aqsj" name="#tab-aqsj" onclick="setData(this)">安全审计系统</a></li>
+                        <li><a href="procenter.html#tab-ywgl" name="#tab-ywgl" onclick="setData(this)">运维管理系统</a></li>
+                        <li><a href="procenter.html#tab-sjkf" name="#tab-sjkf" onclick="setData(this)">数据开放系统</a></li>
+                        <li><a href="procenter.html#tab-nrgl" name="#tab-nrgl" onclick="setData(this)">内容管理系统</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown active">
+                    <a href="solution.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">解决方案<br>SOLUTION<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="solution-dzsw.html">电子政务</a></li>
+                        <li><a href="solution-ylhy.html">医疗行业</a></li>
+                        <li><a href="solution-hlwhy.html">互联网行业</a></li>
+                        <li><a href="solution-zhcs.html">智慧城市</a></li>
+                        <li><a href="solution-jrhy.html">金融行业</a></li>
+                        <li><a href="solution-xqhz.html">校企合作</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="news.html" name="#tab-gsdt" onclick="setData(this)"  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">新闻中心<br>NEWS<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="news.html" name="#tab-gsdt" onclick="setData(this)">公司动态</a></li>
+                        <li><a href="news.html" name="#tab-hyxw" onclick="setData(this)">行业新闻</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" data-toggle="modal" data-target="#about">关于我们</a></li>
+                <!--<form class="navbar-form navbar-left">-->
+                <!--<div class="form-group">-->
+                <!--<input type="text" class="form-control" placeholder="用户名..">-->
+                <!--</div>-->
+                <!--<div class="form-group">-->
+                <!--<input type="text" class="form-control" placeholder="密码..">-->
+                <!--</div>-->
+                <!--<button type="submit" class="btn btn-default">登录</button>-->
+                <!--</form>-->
+            </ul>
+
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<!--banner--><!--轮播动画-->
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <img src="img/bannerjjfa.jpg" alt="...">
+            <div class="carousel-caption">
+                <h1>3XDATA智慧城市<br>
+                    大数据解决方案</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid" style="">
+    <div class="row" style="background-color: white;height: 540px">
+        <div class="col-md-8 col-md-offset-2">
+            <h3>方案概述</h3>
+            <h4 style="margin-top: 20px">SOLUTION &nbsp;OVERVIEW</h4>
+            <h5 style="margin-top: 50px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;“数据驱动世界、软件定义世界，自动化正在接管世界，建设智慧城市将是下一波浪潮和拉动 IT 世界的重要载体。”《大数据》一书作者涂子沛这样描述。 大数据遍布智慧城市的各个方面，从政府决策服务，到人们衣食住行的生活方式，再到城市的产业布局和规划等，都将实现智慧化、智能化，大数据为智慧城市提供智慧引擎。</h5>
+            <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;、软件到信息服务等多个层面；另一方面，越来越多的互联网公司正在通过云交付的模式，将自身对于大数据集的存储、计算与分析能力开放给第三方，使得数据即服务（Data as a Service）成为影响产业格局的新一代业务模式。</h5>
+            <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;近年来，相关业界的领先者们也多次预言，大数据将引发新的“智慧革命”：从海量、复杂、实时的大数据中可以发现知识、提升智能、创造价值。“智慧来自大数据” ——城市管理利用大数据，才能获得突破性改善，诸多产业利用大数据，才能发现创新升级的机会点，进而获得先发优势</h5>
+            <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;大数据驱动下的智慧城市，关乎每个人的生活。结合智慧城市对信息的需求，大数据在智慧城市中的落脚点集中在为其各个领域提供强大的决策支持。智慧交通、智慧安防、智慧医疗……未来智慧城市的美好图景已经被勾勒出来。</h5>
+        </div>
+    </div>
+    <div class="row" style="background-color: #EBEBED;height: 820px">
+        <div class="col-md-8 col-md-offset-2">
+            <h3 style="margin-top: 45px">方案架构</h3>
+            <h4 style="margin-top: 20px">SOLUTION &nbsp; ARCHITECTURE</h4>
+            <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;智慧城市大数据总体系统框架分为五层, 分别是数据层，存储层，计算层，模型层, 应用层。模型层是整个大数据的核心部分，为上层应用提供数据支撑。</h5>
+            <img style="padding-left: 150px" src="solution-img/zhcs.jpg">
+            <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;智慧城市的本质是对数据的智慧处理，事实上，在任何一个行业中，都不会遇到智慧城市产业中这样跨部门、跨区域和跨类型的数据复杂度。而围绕智慧城市跨部门、跨产业数据整合和分析的大数据业务，引入3xData大数据平台架构，实现对海量的交通数据、地理位置检测数据、 环境数据、医疗数据、政务数据、教育数据、公安数据的实时、全面、系统的数据采集，存储、分析、挖掘，使我们生活的环境变得越来越具备“ 智慧” 特征，我们也将能更“ 智慧” 地利用信息，对世界和他人作出更加“ 智慧” 的判断回应。</h5>
+        </div>
+    </div>
+    <div class="row" style="background-color: white;height:570px">
+        <div class="col-md-8 col-md-offset-2">
+            <h3 style="margin-top: 45px">方案优势</h3>
+            <h4 style="margin-top: 20px">SOLUTION&nbsp; ADVANTAGE</h4>
+            <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3xData智慧城市大数据解决方案在数据分析、数据管理、数据处理、数据可视化等重要技术上具有优势：</h5>
+            <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1. 数据分析技术：包括数据挖掘、机器学习等人工智能技术，主要应用在交通管理、疾病控制、医疗行为监管、医疗质量管理，教育资源管理，教育质量管理，地理位置监测等方面。由于智慧城市系统涉及的行业多，交叉整合分析要求较高。3xData智慧城市大数据解决方案内置自主开发的函数模型库，除包含常用的统计分析算法外，还内置了多种常用数据挖掘算法及分析模型，事故预警模型、全球定位模型、犯罪行为分析模型等等。</h5>
+            <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.数据管理技术：包括关系型和非关系型数据管理技术、数据融合和集成技术、数据抽取技术、数据清洗和过滤技术。 由于智慧城市系统涉及的行业多，覆盖面广，存在信息分散、信息内容单一等问题，也对数据管理技术提出了更高的要求。3xData智慧城市大数据解决方案具有信息集成优势和组合效率，内置 ETL 服务子系统ETL 配置工具，支持从文件，DB、数据流中导入数据。灵活的进行数据转换配置和任务配置。</h5>
+            <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.数据处理技术：包括分布式计算技术、内存计算技术、流处理技术。智慧城市数据规模从过去的 TB 级爆发性增长到 PB 级，由此带来对海量数据的存储不计算的挑战，迫切需要寻求新的处理技术和手段来更有效的利用软硬件资源，在降低 IT 投入、维护成本和物理能耗的同时，为智慧城市大数据的发展提供更为稳定、强大的数据处理能力。3xData智慧城市大数据解决方案包含Hadoop分布式计算框架、Spark内存计算框架和Streaming 流计算框架，同时集成了 hive、 hbase 等成熟组件。</h5>
+        </div>
+
+    </div>
+    <div class="row" style="background-color: #EBEBED; height: 350px">
+        <div class="col-md-8 col-md-offset-2">
+            <h3 style="margin-top: 45px">方案价值</h3>
+            <h4 style="margin-top: 20px">SOLUTION&nbsp;ARCHITECTURE</h4>
+            <h5 style="margin-top: 20px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3xData智慧城市大数据解决方案立足于基础设施平台建设，同时切实贴合城市发展需求，提供优质的解决方案服务。</h5>
+            <h5 style="margin-top: 20px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;为客户提供配置式安装部署，配置式个性化开发平台，提供丰富的函数封装模型库，解决了 Hadoop 原生的框架中分布式存储等技术难题。通过整合现有信息资源并为未来的信息化建设提供统一支撑的角度， 打破各个系统间数据不能共享的现状，实现空间信息和非空间信息的统筹管理、统一服务、共享共用。针对共享的信息资源通过与业的基础架构实现不同数据的快速查询、统计、关联等操作，为政府各级领导和各业务应用对象，提供有效支撑业务应用、领导决策和内外部的信息共享。</h5>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="container-fluid" id="foot">
+    <div class="row">
+        <div class="col-md-12">
+            <p><a href="#top" class="pull-right"><font style="color: white">回到顶部↑</font></a></p>
+            <p>地址 : 江西省南昌市火炬五路梦想街区阿里菜鸟众创空间210室<br>
+                电话 : 0791-86220075     邮箱 : sales@3xdata.cn<br>
+                © 2015-2018 江西三叉数信息科技有限公司 版权所有 丨 赣ICP备16005077号</p>
+
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="about" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">关于我们</h4>
+            </div>
+            <div class="modal-body">
+                <article>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;江西三叉数信息科技有限公司成立于2015年，是一家专业从事信息技术应用与服务的IT公司，致力于成为国内顶尖的信息技术服务提供商。
+                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;公司成立于2015年，始终坚持创新与应用相结合，专注打造数据采集、数据综合管理、数据资产化、数据挖掘分析、数据共享开放等数据类产品。提供精细化、专业化的数据运营服务，致力于成为具有核心竞争力的本地化数据服务提供商。秉承工匠精神，用全方位的数据服务、服务于您的每一条数据！
+                    <p style="text-align: right">——融合创新技术 服务智慧中国&hellip;
+                </article>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">了解了</button>
+                <!--<button type="button" class="btn btn-primary">Save changes</button>-->
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+
+<script>
+    function setData(obj){
+        var id=$(obj).attr("name");
+        window.localStorage.setItem("id",id);
+    }
+    //关闭click.bs.dropdown.data-api事件，使顶级菜单可点击
+    $(document).off('click.bs.dropdown.data-api');
+    //自动展开
+    $('.nav .dropdown').mouseenter(function(){
+        $(this).addClass('open');
+    });
+    //自动关闭
+    $('.nav .dropdown').mouseleave(function(){
+        $(this).removeClass('open');
+    });
+</script>
+</body>
+</html>
+
+
+
+
+

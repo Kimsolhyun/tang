@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>3XDATA金融行业
+        大数据解决方案</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <!--[if lt IE 9]>
+    <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        body{
+            padding-top: 50px;
+            padding-bottom: 50px;
+            background: #F5F5F5;
+        }
+        .carousel-caption{
+            padding-right: 300px;
+            margin-right: 136px;
+            padding-bottom: 40px;
+        }
+        .carousel-caption h1{
+            width: 500px;;
+            font-size:3.4em;
+            font-family: "微软雅黑 light ";
+            text-align: left;
+            padding-bottom: 20px;
+        }
+        .carousel-caption h4{
+            font-family: "微软雅黑 ";
+            font-size:1.5em;
+        }
+        .carousel-caption h2{
+            font-family: "微软雅黑 ";
+        }
+        .container-fluid  .row{
+            height: 400px;
+
+        }
+        .container-fluid h3{
+            color: #32A6CC;
+            margin-top: 70px;
+        }
+        .container-fluid h4{
+            color: #32A6CC;
+
+        }
+        .container-fluid h5{
+
+            line-height: 25px;
+            color: #333333;
+            font-family: "微软雅黑 ";
+            font-size: medium;
+            font-weight:500;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse " role="navigation">
+    <!--navbar-inverse 反色-->
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#demo-navbar" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="home.html"><img src="img/3xdatalogo.png"></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="demo-navbar">
+            <ul class="nav navbar-nav">
+                <li class=""><a href="home.html">首页<br>HOME<span class="sr-only">(current)</span></a></li>
+                <li class="dropdown ">
+                    <a href="procenter.html" name="#tab-sjrh" onclick="setData(this)" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">产品中心<br>PRODUCT CENTER<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="procenter.html#tab-sjrh" name="#tab-sjrh" onclick="setData(this)">数据融合系统</a></li>
+                        <li><a href="procenter.html#tab-sjgl" name="#tab-sjgl" onclick="setData(this)">数据管理系统</a></li>
+                        <li><a href="procenter.html#tab-aqsj" name="#tab-aqsj" onclick="setData(this)">安全审计系统</a></li>
+                        <li><a href="procenter.html#tab-ywgl" name="#tab-ywgl" onclick="setData(this)">运维管理系统</a></li>
+                        <li><a href="procenter.html#tab-sjkf" name="#tab-sjkf" onclick="setData(this)">数据开放系统</a></li>
+                        <li><a href="procenter.html#tab-nrgl" name="#tab-nrgl" onclick="setData(this)">内容管理系统</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown active">
+                    <a href="solution.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">解决方案<br>SOLUTION<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="solution-dzsw.html">电子政务</a></li>
+                        <li><a href="solution-ylhy.html">医疗行业</a></li>
+                        <li><a href="solution-hlwhy.html">互联网行业</a></li>
+                        <li><a href="solution-zhcs.html">智慧城市</a></li>
+                        <li><a href="solution-jrhy.html">金融行业</a></li>
+                        <li><a href="solution-xqhz.html">校企合作</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="news.html" name="#tab-gsdt" onclick="setData(this)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">新闻中心<br>NEWS<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="news.html" name="#tab-gsdt" onclick="setData(this)">公司动态</a></li>
+                        <li><a href="news.html" name="#tab-hyxw" onclick="setData(this)">行业新闻</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" data-toggle="modal" data-target="#about">关于我们</a></li>
+                <!--<form class="navbar-form navbar-left">-->
+                <!--<div class="form-group">-->
+                <!--<input type="text" class="form-control" placeholder="用户名..">-->
+                <!--</div>-->
+                <!--<div class="form-group">-->
+                <!--<input type="text" class="form-control" placeholder="密码..">-->
+                <!--</div>-->
+                <!--<button type="submit" class="btn btn-default">登录</button>-->
+                <!--</form>-->
+            </ul>
+
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<!--banner--><!--轮播动画-->
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <img src="img/bannerjjfa.jpg" alt="...">
+            <div class="carousel-caption">
+                <h1>3XDATA金融行业<br>
+                    大数据解决方案</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid" style="">
+    <div class="row" style="background-color: white;height: 710px">
+        <div class="col-md-8 col-md-offset-2">
+            <h3>方案概述</h3>
+            <h4 style="margin-top: 20px">SOLUTION &nbsp;OVERVIEW</h4>
+            <h5 style="margin-top: 50px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;进入 21 世纪，中国金融业对信息化工作前所未有的重视，众多金融机构都建立起了自己的数据平台，形成了金融机构网络和垂直业务体系，实现了金融数据大集中。这些数据有四个特点。第一个特点是数据量大，一般达到 PB 级。第二个特点是类型多，如非结构化数据、半结构化数据、流数据等。第三个特点是价值密度低，有用的数据含量少。 第四个特点是处理速度快，要求系统在短时间内做出响应。 这都是大数据的典型特点，而在金融行业，对数据存储要求非常高，特别是在像中国人口很多的国家来说，每天都会产生大量的交易数据，包括银行、证券、保险等各个金融领域都会产生大量的数据。这些数据都会存放在交易系统当中，如何处理每天产生的大数据，进行科学的分析处理，挖掘隐藏在数据内部各种有价值的关联，并及时提供决策支持，成为摆在金融业面前的新课题。</h5>
+            <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;传统的 BI 处理手段，深度上有限制。例如数据分析，希望细化到每笔交易的查询、分析，对于数据的处理计算能力和计算的深度、广度要求都非常高，原有数据分析速度限制等原因做不到。而大数据的优势是能够针对最底层的交易数据进行全面的模式识别、分析，使得整个风险分析能力和效率大大提升。 在盈利方面，通过对用户的分类和信用能力分析，可以改善用户服务，也能大大提升金融机构的盈利水平。 在运营效率方面，对金融公司来说，很多都是跨全国的大型公司，它的分支机构，整个公司运营效率也是具有大量价值，可以降低成本，可以使整个金融机构在后台上及时得到稳定、平稳的支持。我们可以用大数据手段，把金融机构在分于各个系统当中的运营数据进行汇总、交叉分析使得整个运营效益进行大大的提升。</h5>
+            <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;基于金融很多业务系统都已经构建，包括 BI、信息分析，这些仍然可以在大数据平台上继续实施，而且比传统方法更有效率。不仅可以降低数据整合工作量，把这些相对昂贵的工作放到更有效、更高效、性价比更高的大数据 Hadoop 上来进行，可以更大程度上降低原来对于基于主机昂贵的独立系统要求，同样使数据可以运行在基于英特尔 X86 平台上，提高效率降低成本。</h5>
+        </div>
+    </div>
+    <div class="row" style="background-color: #EBEBED;height: 680px">
+        <div class="col-md-8 col-md-offset-2">
+            <h3 style="margin-top: 45px">方案架构</h3>
+            <h4 style="margin-top: 20px">SOLUTION &nbsp; ARCHITECTURE</h4>
+            <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;金融行业大数据总体系统架构分为五层, 分别是数据层，存储层，计算层，模型层, 应用层。模型层是整个大数据的核心部分，为上层应用提供数据支撑。</h5>
+            <img style="padding-left: 150px" src="solution-img/jrhy.jpg">
+            <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;针对金融行业大数据分析的特点, 引入大数据平台架构，实现对海量的银行数据、证券数据、保险数据的自动化、高能效、虚拟化和标准化的存储和管理，保证金融行业海量交易数据的安全性、可靠性和高效的运营。</h5>
+        </div>
+    </div>
+    <div class="row" style="background-color: white;height:690px">
+        <div class="col-md-8 col-md-offset-2">
+            <h3 style="margin-top: 45px">方案优势</h3>
+            <h4 style="margin-top: 20px">SOLUTION&nbsp; ADVANTAGE</h4>
+            <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3xData金融大数据解决方案在数据分析、数据管理、数据处理、数据可视化等重要技术上具有优势：</h5>
+            <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1. 数据分析技术：包括数据挖掘、机器学习等人工智能技术，主要应用在用户信用分析，用户聚类分析，用户特征分析，产品关联分析，营销分析等方面。由于金融系统安全性、稳定性和实时性要求比较高，也大数据计算处理能力也要求非常高。3xData金融大数据解决方案内置自主开发的函数模型库，除包含常用的统计分析算法外，还内置了多种常用数据挖掘算法及分析模型。插件式的函数模型库，可劢态增加新算法模型。同时，还提供行业分析模型及类似 BI 的分析和展示工具。</h5>
+            <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.数据管理技术：包括关系型和非关系型数据管理技术、数据融合和集成技术、数据抽取技术、数据清洗和转换等技术。 金融行业对数据的实时处理能力要求非常高，3xData金融大数据解决方案内置 ETL 服务子系统与 ETL 配置工具，支持从文件，DB、数据流中导入数据。 灵活的进行数据转换配置和任务配置。</h5>
+            <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.数据处理技术：包括分布式计算技术、内存计算技术、流处理技术。金融数据的海量增长使得企业需要通过新型数据处理技术来更有效的利用软硬件资源，在降低 IT 投入、维护成本和物理能耗的同时，为金融大数据的发展提供更为稳定、强大的数据处理能力。</h5>
+            <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.数据展现技术：包括可视化技术、历史流展示技术、空间信息流展示技术等。主要用于金融产品健康度监视，产品发展趋势监视，客户价值监视，反洗钱反欺诈预警等方面。金融数据种类多样，相关统计指标复杂，需要大力发展数据展现技术，提高金融数据的直观性和可视性，从而提升金融数据的可利用价值。彩讯金融大数据解决方案自助分析工具包含报表工具和分析工具。自定义报表工具，实现了基于 XML 的定义文件来可编程性地生成报表的能力。 围绕着报表引擎，开发用户图形界面，用户可以使用向导，无需编程，通过工具配置一步接一步完成创建一个报表。数据展示格式灵活，能更大程度上满足用户的数据需求。多维分析工具，提供丰富的图形化展现界面和接口。 用 java语言开发支持 MDX（多维表达式）的查询语言 、分析型XML 和 olap4j 的接口技术规范。实现了从 SQL 和其它数据源读取数据，在内存缓冲区中生成集合数据。</h5>
+        </div>
+
+    </div>
+    <div class="row" style="background-color: #EBEBED; height: 350px">
+        <div class="col-md-8 col-md-offset-2">
+            <h3 style="margin-top: 45px">方案价值</h3>
+            <h4 style="margin-top: 20px">SOLUTION&nbsp;ARCHITECTURE</h4>
+            <h5 style="margin-top: 20px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;金融行业当前面临着跨行业数据共享的问题与挑战。3xData金融行业大数据解决方案能全面整合金融数据，充分发挥出金融大数据的价值，在客户深度分析，市场新业务开发，传统业务运营方面，具有高性价比，易于管理和扩展等特性，效果显著，为运营商理解客户金融需求，把金融需求转化成金融产品，促建业务快速稳健的发展。</h5>
+            <h5 style="margin-top: 20px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3xData互联网大数据解决方案包含Hadoop 分布式计算框架、Spark内存计算框架和Streaming 流计算框架，同时集成了 hive、 hbase 等成熟组件。</h5>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="container-fluid" id="foot">
+    <div class="row">
+        <div class="col-md-12">
+            <p><a href="#top" class="pull-right"><font style="color: white">回到顶部↑</font></a></p>
+            <p>地址 : 江西省南昌市火炬五路梦想街区阿里菜鸟众创空间210室<br>
+                电话 : 0791-86220075     邮箱 : sales@3xdata.cn<br>
+                © 2015-2018 江西三叉数信息科技有限公司 版权所有 丨 赣ICP备16005077号</p>
+
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="about" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">关于我们</h4>
+            </div>
+            <div class="modal-body">
+                <article>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;江西三叉数信息科技有限公司成立于2015年，是一家专业从事信息技术应用与服务的IT公司，致力于成为国内顶尖的信息技术服务提供商。
+                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;公司成立于2015年，始终坚持创新与应用相结合，专注打造数据采集、数据综合管理、数据资产化、数据挖掘分析、数据共享开放等数据类产品。提供精细化、专业化的数据运营服务，致力于成为具有核心竞争力的本地化数据服务提供商。秉承工匠精神，用全方位的数据服务、服务于您的每一条数据！
+                    <p style="text-align: right">——融合创新技术 服务智慧中国&hellip;
+                </article>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">了解了</button>
+                <!--<button type="button" class="btn btn-primary">Save changes</button>-->
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+
+<script>
+    function setData(obj){
+        var id=$(obj).attr("name");
+        window.localStorage.setItem("id",id);
+    }
+    //关闭click.bs.dropdown.data-api事件，使顶级菜单可点击
+    $(document).off('click.bs.dropdown.data-api');
+    //自动展开
+    $('.nav .dropdown').mouseenter(function(){
+        $(this).addClass('open');
+    });
+    //自动关闭
+    $('.nav .dropdown').mouseleave(function(){
+        $(this).removeClass('open');
+    });
+</script>
+</body>
+</html>
+
+
+
+
+

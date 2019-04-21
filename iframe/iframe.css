@@ -1,0 +1,39 @@
+.iframe-sm7{
+    padding-top: 20px;
+}
+.iframe-sm7 a{
+    color: black;
+    text-decoration: none;
+    font-size: larger;
+}
+a:hover{
+    color: dodgerblue;
+}
+.iframe-sm7 h5{
+    font-size:1.03em;
+    font-family: "微软雅黑 "
+}
+.iframe-sm2{
+    padding-top: 20px;
+}
+.iframe-news{
+    height: 500px;
+}
+.row{
+    background-color:#EBEBED;
+    margin: 30px 0 0 0;
+    padding: 20px 0 20px 0;
+
+    -webkit-transition-property: background-color;
+    -webkit-transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease;
+
+}
+.row:hover{
+    background-color: white;
+    box-shadow: rgba(50, 50, 50, 5) 0 0 10px;
+}
+.row:hover a{
+    color: dodgerblue; ;
+}
+
